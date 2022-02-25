@@ -3,7 +3,6 @@ import {
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
 import ExploreScreen, { PostDetailsScreen } from '@src/screens/explore';
-import PostsScreen from '@src/screens/explore/post';
 import SearchScreen from '@src/screens/explore/search';
 
 const ExploreStack = createNativeStackNavigator<ExploreStackParamList>();

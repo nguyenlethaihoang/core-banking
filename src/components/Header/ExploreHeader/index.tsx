@@ -44,10 +44,10 @@ const ExploreHeaderTitle: React.FC<IProps> = (props) => {
           style={{
             // padding: scaleSize(10),
             backgroundColor: COLORS.white_3,
-            width: scaleSize(40),
-            height: scaleSize(40),
+            width: scaleSize(36),
+            height: scaleSize(36),
             elevation: 6,
-            borderRadius: scaleSize(100) / 2,
+            borderRadius: scaleSize(36) / 2,
             // shadowColor: COLORS.dark_gray_1,
             // shadowOffset: {
             //   width: 4,
@@ -57,6 +57,7 @@ const ExploreHeaderTitle: React.FC<IProps> = (props) => {
             // shadowRadius: 16,
           }}>
           <IconButton
+            size={scaleSize(36)}
             icon={
               <Ionicons name='search' size={24} color={COLORS.dark_gray_2} />
             }

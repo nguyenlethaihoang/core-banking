@@ -21,35 +21,30 @@ const EventCard: React.FC<IEventCardProps> = (props) => {
 
   return (
     <TouchableOpacity onPress={() => {}}>
-      <Neumorph>
-        <Card style={styles.card}>
-          <Stack
-            direction='row'
-            justifyContent='flex-start'
-            alignItems='flex-start'>
-            <View style={styles.content}>
-              <Text style={styles.title}>{title}</Text>
-              <Text
-                style={styles.subtitle}
-                ellipsizeMode='clip'
-                numberOfLines={3}>
-                {description}
-              </Text>
-              <Text
-                color={COLORS.dark_gray_2}
-                fontSize={scaleSize(16)}
-                underline>
-                {t('See more')}
-              </Text>
-            </View>
-            <Image
-              source={{ uri: image }}
-              style={styles.image}
-              resizeMode='cover'
-            />
-          </Stack>
-        </Card>
-      </Neumorph>
+      <Card style={styles.card}>
+        <Stack
+          direction='row'
+          justifyContent='flex-start'
+          alignItems='flex-start'>
+          <View style={styles.content}>
+            <Text style={styles.title}>{title}</Text>
+            <Text
+              style={styles.subtitle}
+              ellipsizeMode='clip'
+              numberOfLines={3}>
+              {description}
+            </Text>
+            <Text color={COLORS.dark_gray_2} fontSize={scaleSize(16)} underline>
+              {t('See more')}
+            </Text>
+          </View>
+          <Image
+            source={{ uri: image }}
+            style={styles.image}
+            resizeMode='cover'
+          />
+        </Stack>
+      </Card>
     </TouchableOpacity>
   );
 };

@@ -19,7 +19,6 @@ interface IButtonProps extends TouchableHighlightProps {
   textStyle?: StyleProp<TextStyle>;
   variant?: 'primary' | 'secondary';
   selected?: boolean;
-  color?: string;
 }
 const Button: React.FC<IButtonProps> = (props) => {
   const {
@@ -28,7 +27,6 @@ const Button: React.FC<IButtonProps> = (props) => {
     selected,
     variant = 'primary',
     textStyle,
-    color,
     ...otherProps
   } = props;
   let buttonStyle = {

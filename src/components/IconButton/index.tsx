@@ -10,21 +10,22 @@ import {
 
 interface IProps extends TouchableWithoutFeedbackProps {
   icon: React.ReactNode;
+  size?: number;
 }
 
 const IconButton: React.FC<IProps> = (props) => {
-  const { icon, ...otherProps } = props;
+  const { icon, size, ...otherProps } = props;
   return (
     <TouchableOpacity
       style={[
         {
-          width: scaleSize(42),
-          height: scaleSize(42),
+          width: size || scaleSize(36),
+          height: size || scaleSize(36),
           backgroundColor: COLORS.white_3,
-          borderRadius: scaleSize(42) / 2,
+          borderRadius: (size || scaleSize(36)) / 2,
           alignItems: 'center',
           justifyContent: 'center',
-          elevation: 10,
+          elevation: 6,
         },
       ]}
       {...otherProps}>

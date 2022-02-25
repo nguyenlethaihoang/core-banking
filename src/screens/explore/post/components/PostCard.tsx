@@ -1,21 +1,17 @@
+import { scaleSize } from '@core/utils';
+import { useNavigation } from '@react-navigation/native';
+import { COLORS, FONTS } from '@src/assets/const';
+import Card from '@src/components/Card';
+import { ExploreScreenProps } from '@src/navigation/ExploreStackScreen';
+import React from 'react';
 import {
   Dimensions,
   Image,
-  ImageBackground,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
-import Card from '@src/components/Card';
-import { scaleSize } from '@core/utils';
-import { COLORS, FONTS } from '@src/assets/const';
-import { useNavigation } from '@react-navigation/native';
-
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Neumorph from '@src/components/Neumorph';
-import { ExploreScreenProps } from '@src/navigation/ExploreStackScreen';
 
 interface IPostCard {
   title: string;
@@ -36,23 +32,18 @@ const PostCard: React.FC<IPostCard> = (props) => {
         onPress={() => {
           navigation.navigate('PostDetails');
         }}>
-        <Neumorph>
-          <Card
-            style={[
-              styles.card,
-              { width: style?.width, margin: style?.margin },
-            ]}>
-            <Image
-              source={{ uri: image }}
-              style={styles.image}
-              resizeMode='cover'
-            />
-            <View style={styles.content}>
-              <Text style={styles.title}>{title}</Text>
-              <Text style={styles.subtitle}>{author}</Text>
-            </View>
-          </Card>
-        </Neumorph>
+        <Card
+          style={[styles.card, { width: style?.width, margin: style?.margin }]}>
+          <Image
+            source={{ uri: image }}
+            style={styles.image}
+            resizeMode='cover'
+          />
+          <View style={styles.content}>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.subtitle}>{author}</Text>
+          </View>
+        </Card>
       </TouchableOpacity>
     </View>
   );
