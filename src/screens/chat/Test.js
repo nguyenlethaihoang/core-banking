@@ -1,18 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import Test from './Test';
 
-type Props = {};
-
-const ChatScreen = (props: Props) => {
+const Test = () => {
   return (
     <View>
-      <Test />
-      <Text>ChatScreen</Text>
+      <Text>Test</Text>
     </View>
   );
 };
 
-export default ChatScreen;
+export default Test;
 
 const styles = StyleSheet.create({});

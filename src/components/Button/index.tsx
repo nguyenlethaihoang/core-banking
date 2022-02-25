@@ -11,6 +11,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import Neumorph from '../Neumorph';
 
 interface IButtonProps extends TouchableHighlightProps {
   title: string;
@@ -18,6 +19,7 @@ interface IButtonProps extends TouchableHighlightProps {
   textStyle?: StyleProp<TextStyle>;
   variant?: 'primary' | 'secondary';
   selected?: boolean;
+  color?: string;
 }
 const Button: React.FC<IButtonProps> = (props) => {
   const {
@@ -26,6 +28,7 @@ const Button: React.FC<IButtonProps> = (props) => {
     selected,
     variant = 'primary',
     textStyle,
+    color,
     ...otherProps
   } = props;
   let buttonStyle = {
@@ -70,7 +73,7 @@ const styles = StyleSheet.create({
   wrapper: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: scaleSize(6),
+    paddingVertical: scaleSize(4),
     paddingHorizontal: scaleSize(24),
     borderRadius: scaleSize(60),
   },
@@ -83,12 +86,12 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.48,
     shadowRadius: 10,
-    elevation: 18,
+    elevation: 8,
   },
 
   text: {
     fontSize: scaleSize(20),
-    color: COLORS.black_1,
+    color: COLORS.dark_gray_2,
     fontWeight: 'bold',
   },
 });

@@ -8,11 +8,10 @@ import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../store';
 import { IAuthState } from '../store/authSlice';
-import RootNavigator from './BottomTabNavigator';
-import { RootStackParamList } from './RootStackParams';
+import RootNavigator from './RootNavigator';
+import { AuthStackParamList } from './AuthStackParams';
 
-const AuthStack = createNativeStackNavigator<RootStackParamList>();
-// const RootStack = createNativeStackNavigator<RootStackParamList>();
+const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 
 const AuthNavigator: FC = () => {
   return (

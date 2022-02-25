@@ -2,8 +2,8 @@ import { scaleSize } from '@core/utils';
 import { useNavigation } from '@react-navigation/native';
 import { COLORS } from '@src/assets/const';
 import { Box, Stack } from '@src/components';
-
 import { PostDetailsScreenProps } from '@src/navigation/ExploreStackScreen';
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import {

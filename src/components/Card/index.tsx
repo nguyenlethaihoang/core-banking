@@ -15,14 +15,13 @@ export default Card;
 const styles = StyleSheet.create({
     card: {
         borderRadius: scaleSize(12),
-        shadowColor: COLORS.dark_gray_1,
+        shadowColor: 'red',
         shadowOffset: {
-            width: 2,
-            height: 12,
+            width: 4,
+            height: 4,
         },
         shadowOpacity: 1,
-        shadowRadius: 16,
-
-        elevation: 15,
+        shadowRadius: 12,
+        elevation: 12,
     },
 });

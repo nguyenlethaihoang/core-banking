@@ -1,30 +1,30 @@
 import { scaleSize } from '@core/utils';
 import { COLORS } from '@src/assets/const';
+import { Box } from '@src/components';
+import ExploreHeaderTitle from '@src/components/Header/ExploreHeader';
+import { ExploreScreenProps } from '@src/navigation/ExploreStackScreen';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { StyleSheet } from 'react-native';
-import { default as EventScreen, default as PostsScreen } from './event';
+import EventScreen from './event';
+import PostsScreen from './post';
 import PostDetailsScreen from './post_details';
 import SearchScreen from './search';
 
-// const ExploreScreen: React.FC<ExploreScreenProps> = () => {
-//   const { t } = useTranslation();
+const ExploreScreen: React.FC<ExploreScreenProps> = ({ navigation }) => {
+  const { t } = useTranslation();
+  const [route, setRoute] = useState<'Post' | 'Event'>('Event');
+  return (
+    <Box bgColor={COLORS.gray_1} container paddingHorizontal={scaleSize(10)}>
+      <ExploreHeaderTitle route={route} navigate={(route) => setRoute(route)} />
 
-//   return (
-//     <Box bgColor={COLORS.gray_1} container paddingHorizontal={scaleSize(10)}>
-//       <Stack
-//         direction='row'
-//         space={scaleSize(20)}
-//         style={styles.buttonContainer}>
-//         {/* FIXME: Change to Button component */}
-//         <RNButton title={t('Event')} onPress={() => Alert.alert('test')} />
-//         <RNButton title={t('Post')} onPress={() => Alert.alert('test')} />
-//       </Stack>
-//       {/* <PostsScreen /> */}
-//       <EventScreen />
-//     </Box>
-//   );
-// };
+      {route === 'Post' && <PostsScreen />}
+      {route === 'Event' && <EventScreen />}
+    </Box>
+  );
+};
 
-// export default ExploreScreen;
+export default ExploreScreen;
 
 export { EventScreen, PostsScreen, SearchScreen, PostDetailsScreen };
 

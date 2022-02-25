@@ -22,12 +22,7 @@ const App = () => {
         <SafeAreaProvider>
           <Provider store={store}>
             <NavigationContainer>
-              <SafeAreaView
-                style={{
-                  flex: 1,
-                }}>
-                <Navigation />
-              </SafeAreaView>
+              <Navigation />
             </NavigationContainer>
           </Provider>
           <StatusBar />

@@ -1,34 +1,78 @@
 import { scaleSize } from '@core/utils';
-import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 import { COLORS, FONTS } from '@src/assets/const';
 import { Stack } from '@src/components';
 import Button from '@src/components/Button';
 import React from 'react';
-import { Alert, StyleSheet, View } from 'react-native';
-import { useHeaderHeight } from '@react-navigation/elements';
-const ExploreHeader: React.FC<NativeStackHeaderProps> = (props) => {
-  const headerHeight = useHeaderHeight();
+import { StyleSheet, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import IconButton from '@src/components/IconButton';
+import Neumorph from '@src/components/Neumorph';
 
+interface IProps {
+  route: 'Post' | 'Event';
+  navigate: (_: 'Event' | 'Post') => void;
+}
+const ExploreHeaderTitle: React.FC<IProps> = (props) => {
+  const { route, navigate } = props;
   return (
     <View style={styles.header}>
-      {/* FIXME: Change to Button component */}
-      <Button title={'Event'} onPress={() => Alert.alert('test')} />
-      <Button title={'Event'} onPress={() => Alert.alert('test')} />
+      <Stack direction='row' space={scaleSize(10)}>
+        {/* FIXME: Change to Button component */}
+        <Button
+          title={'Post'}
+          selected={route === 'Post'}
+          onPress={() => {
+            navigate('Post');
+          }}
+        />
+        <Button
+          title={'Event'}
+          selected={route === 'Event'}
+          onPress={() => {
+            navigate('Event');
+          }}
+        />
+      </Stack>
+      <View
+        style={{
+          position: 'absolute',
+          justifyContent: 'center',
+          alignItems: 'center',
+          right: 2,
+        }}>
+        <Neumorph
+          style={{
+            // padding: scaleSize(10),
+            backgroundColor: COLORS.white_3,
+            width: scaleSize(40),
+            height: scaleSize(40),
+            elevation: 6,
+            borderRadius: scaleSize(100) / 2,
+            // shadowColor: COLORS.dark_gray_1,
+            // shadowOffset: {
+            //   width: 4,
+            //   height: 4,
+            // },
+            // shadowOpacity: 1,
+            // shadowRadius: 16,
+          }}>
+          <IconButton
+            icon={
+              <Ionicons name='search' size={24} color={COLORS.dark_gray_2} />
+            }
+          />
+        </Neumorph>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   header: {
-    position: 'relative',
-    width: '100%',
     backgroundColor: COLORS.gray_1,
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'row',
-    paddingHorizontal: scaleSize(20),
-    paddingVertical: scaleSize(20),
-    marG: scaleSize(20),
+    marginTop: scaleSize(24),
   },
   titleWrapper: {
     flex: 1,
@@ -52,4 +96,4 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
 });
-export default ExploreHeader;
+export default ExploreHeaderTitle;

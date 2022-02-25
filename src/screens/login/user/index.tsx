@@ -1,8 +1,8 @@
 import { scaleSize } from '@core/utils';
 import { IMAGES } from '@src/assets';
-import { COLORS } from '@src/assets/const';
+import { COLORS, FONTS } from '@src/assets/const';
 import Text from '@src/components/Text';
-import { UserLoginScreenProps } from '@src/navigation/RootStackParams';
+import { UserLoginScreenProps } from '@src/navigation/AuthStackParams';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { GestureResponderEvent, StyleSheet, View } from 'react-native';
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     marginBottom: scaleSize(6),
   },
   title: {
-    fontSize: scaleSize(44),
+    // fontSize: scaleSize(44),
     fontWeight: 'bold',
     marginVertical: scaleSize(6),
     color: '#193566',

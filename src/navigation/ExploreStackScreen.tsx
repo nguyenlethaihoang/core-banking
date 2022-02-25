@@ -2,9 +2,7 @@ import {
   createNativeStackNavigator,
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
-import { Header } from '@src/components';
-import ExploreHeader from '@src/components/Header/ExploreHeader';
-import EventScreen from '@src/screens/explore/event';
+import ExploreScreen, { PostDetailsScreen } from '@src/screens/explore';
 import PostsScreen from '@src/screens/explore/post';
 import SearchScreen from '@src/screens/explore/search';
 
@@ -13,19 +11,12 @@ const ExploreStack = createNativeStackNavigator<ExploreStackParamList>();
 function ExploreStackScreen() {
   return (
     <ExploreStack.Navigator
-      initialRouteName='Posts'
+      initialRouteName='MainExplore'
       screenOptions={{
         headerShown: false,
       }}>
-      <ExploreStack.Group
-        screenOptions={{
-          headerShown: true,
-        }}>
-        <ExploreStack.Screen name='Posts' component={PostsScreen} />
-        <ExploreStack.Screen name='Events' component={EventScreen} />
-      </ExploreStack.Group>
-
-      <ExploreStack.Screen name='PostDetails' component={PostsScreen} />
+      <ExploreStack.Screen name='MainExplore' component={ExploreScreen} />
+      <ExploreStack.Screen name='PostDetails' component={PostDetailsScreen} />
       <ExploreStack.Group
         screenOptions={{
           presentation: 'modal',
@@ -40,29 +31,21 @@ export default ExploreStackScreen;
 
 export type ExploreStackParamList = {
   //
-  Posts: undefined;
-  Events: undefined;
+  MainExplore: undefined;
   PostDetails: undefined;
   Search: undefined;
 };
-
-type PostsScreenProps = NativeStackScreenProps<ExploreStackParamList, 'Posts'>;
+type ExploreScreenProps = NativeStackScreenProps<
+  ExploreStackParamList,
+  'MainExplore'
+>;
 type PostDetailsScreenProps = NativeStackScreenProps<
   ExploreStackParamList,
   'PostDetails'
->;
-type EventsScreenProps = NativeStackScreenProps<
-  ExploreStackParamList,
-  'Events'
 >;
 type SearchScreenProps = NativeStackScreenProps<
   ExploreStackParamList,
   'Search'
 >;
 
-export type {
-  PostDetailsScreenProps,
-  PostsScreenProps,
-  EventsScreenProps,
-  SearchScreenProps,
-};
+export type { PostDetailsScreenProps, SearchScreenProps, ExploreScreenProps };

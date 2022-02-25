@@ -1,6 +1,22 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-export type RootStackParamList = {
+export type AuthStackParamList = {
+  Intro: undefined;
+
+  //Auth
+  Register: undefined;
+  RoleChoose: undefined;
+  ExpertLogin: undefined;
+  UserLogin: undefined;
+
+  //Root Stack
+  Root: undefined;
+
+  EmotionDiary: undefined;
+  DashboardEmotionDiary: undefined;
+};
+
+export type HomeStackParamList = {
   Intro: undefined;
 
   //Auth
@@ -18,33 +34,33 @@ export type RootStackParamList = {
 
 //Authentication
 type ExpertLoginScreenProps = NativeStackScreenProps<
-  RootStackParamList,
+  AuthStackParamList,
   'ExpertLogin'
 >;
 type UserLoginScreenProps = NativeStackScreenProps<
-  RootStackParamList,
+  AuthStackParamList,
   'UserLogin'
 >;
 type RegisterScreenProps = NativeStackScreenProps<
-  RootStackParamList,
+  AuthStackParamList,
   'Register'
 >;
-type IntroScreenProps = NativeStackScreenProps<RootStackParamList, 'Intro'>;
+type IntroScreenProps = NativeStackScreenProps<AuthStackParamList, 'Intro'>;
 type RoleChooseScreenProps = NativeStackScreenProps<
-  RootStackParamList,
+  AuthStackParamList,
   'RoleChoose'
 >;
 
-type RootStackProps = NativeStackScreenProps<RootStackParamList, 'Root'>;
+type RootStackProps = NativeStackScreenProps<AuthStackParamList, 'Root'>;
 
 
 //Emotion Diary
 type EmotionDiaryScreenProps = NativeStackScreenProps<
-  RootStackParamList,
+  AuthStackParamList,
   'EmotionDiary'
 >;
 type DashboardEmotionDiaryScreenProps = NativeStackScreenProps<
-  RootStackParamList,
+  AuthStackParamList,
   'DashboardEmotionDiary'
 >;
 

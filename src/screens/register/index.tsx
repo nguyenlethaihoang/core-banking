@@ -1,7 +1,7 @@
 import { scaleSize } from '@core/utils';
 import { IMAGES } from '@src/assets';
 import { COLORS } from '@src/assets/const';
-import { RegisterScreenProps } from '@src/navigation/RootStackParams';
+import { RegisterScreenProps } from '@src/navigation/AuthStackParams';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
