@@ -12,10 +12,6 @@ export type RootStackParamList = {
   //Root Stack
   Root: undefined;
 
-  //
-  Posts: undefined;
-  PostDetails: undefined;
-  Search: undefined;
   EmotionDiary: undefined;
   DashboardEmotionDiary: undefined;
 };
@@ -41,13 +37,6 @@ type RoleChooseScreenProps = NativeStackScreenProps<
 
 type RootStackProps = NativeStackScreenProps<RootStackParamList, 'Root'>;
 
-//Explore
-type PostDetailsScreenProps = NativeStackScreenProps<
-  RootStackParamList,
-  'PostDetails'
->;
-type MorePostScreenProps = NativeStackScreenProps<RootStackParamList, 'Posts'>;
-type SearchScreenProps = NativeStackScreenProps<RootStackParamList, 'Search'>;
 
 //Emotion Diary
 type EmotionDiaryScreenProps = NativeStackScreenProps<
@@ -65,9 +54,6 @@ export type {
   RegisterScreenProps,
   IntroScreenProps,
   RoleChooseScreenProps,
-  MorePostScreenProps,
-  PostDetailsScreenProps,
-  SearchScreenProps,
   EmotionDiaryScreenProps,
   DashboardEmotionDiaryScreenProps,
   RootStackProps

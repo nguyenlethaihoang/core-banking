@@ -8,8 +8,9 @@ import { store } from '@src/store';
 import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
+
 const App = () => {
   const isLoadingComplete = useCachedResources();
 
@@ -21,7 +22,12 @@ const App = () => {
         <SafeAreaProvider>
           <Provider store={store}>
             <NavigationContainer>
-              <Navigation />
+              <SafeAreaView
+                style={{
+                  flex: 1,
+                }}>
+                <Navigation />
+              </SafeAreaView>
             </NavigationContainer>
           </Provider>
           <StatusBar />

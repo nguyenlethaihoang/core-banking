@@ -1,13 +1,13 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ChatScreen from '@src/screens/chat';
-import ExploreScreen from '@src/screens/explore';
-import HomeScreen from '@src/screens/home';
-import ProfileScreen from '@src/screens/profile';
-import TabBarButton from '@src/components/TabBarButton';
 import { scaleSize } from '@core/utils';
 import { Ionicons } from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { COLORS } from '@src/assets/const';
+import TabBarButton from '@src/components/TabBarButton';
+import ChatScreen from '@src/screens/chat';
+import HomeScreen from '@src/screens/home';
+import ProfileScreen from '@src/screens/profile';
+import React from 'react';
+import ExploreStackScreen from './ExploreStackScreen';
 // import {TabNavigatorParamsList} from './TabNavigatorParams';
 
 type TabNavigatorParamsList = {
@@ -19,7 +19,7 @@ type TabNavigatorParamsList = {
 
 const Tab = createBottomTabNavigator<TabNavigatorParamsList>();
 
-const BottomTabNavigator: React.FC = () => {
+const RootNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       initialRouteName='Explore'
@@ -45,7 +45,7 @@ const BottomTabNavigator: React.FC = () => {
       />
       <Tab.Screen
         name='Explore'
-        component={ExploreScreen}
+        component={ExploreStackScreen}
         options={{
           tabBarIcon: (props) => <Ionicons name='search' {...props} />,
         }}
@@ -70,4 +70,4 @@ const BottomTabNavigator: React.FC = () => {
   );
 };
 
-export default BottomTabNavigator;
+export default RootNavigator;
