@@ -1,51 +1,46 @@
-import React, { useState } from "react";
-import NavBar from "./components/NavBar/NavBar";
-import TitleChild from "./components/TitleChild/TitleChild";
-import Accordian from "./components/Accordian/Accordian";
-import Footer from "./components/Footer/Footer";
+import Sidebar from "./components/Layout/DefaultLayout/Sidebar/Sidebar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Overview from './pages/Overview';
+import User from "./pages/User";
+import { Fragment, useState } from "react";
+import { privateRoutes } from "./routes";
+import { DefaultLayout } from "./components/Layout";
 
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-// import { publicRoutes } from '~/routes'
-import Home from './pages/Home';
-import Login from './pages/Login';
 
 function App() {
 
-  const [tab, setTab] = useState('Teller Operation');
+  const [isLogin, setIsLogin] = useState(false);
 
-  const handleChangeTab = (tb) => {
-    setTab(tb);
-    console.log(tb);
+  const handleLogin = (useName) => {
+    setIsLogin(useName);
   }
 
   return (
-    // <Router>
-    //   <div className="App">
-    //       <Routes>
-    //           {publicRoutes.map((route, index) => {
-    //             const Page = route.component
-    //             return <Route key={index} path={route.path} element={<Page />} />;
-    //           })}
-    //       </Routes>
-    //   </div>
-    // </Router>
-
     <Router>
-      <div className='App'>
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/Login" element={<Login />}/>
-        </Routes>
+      {/* <Sidebar /> */}
+      <Routes>
 
-        <NavBar handleChangeTab={handleChangeTab}/>
-        {tab==="Teller Operation" && <Accordian />}
-        {tab==="Transfer Operation" && <Accordian />}
-        {tab==="Credit Operation" && <Accordian />}
-        {tab==="Trade Finance Operation" && <Accordian />}
-        {/* <TitleChild props="Teller Operation"/>
-        <Accordian /> */}
-        <Footer />
-      </div>
+        {privateRoutes.map((route, index)=> {
+          const Page = route.component
+
+          let Layout = DefaultLayout
+          
+          if (route.layout) {
+            Layout = route.layout
+          } else if (route.layout === null) {
+            Layout = route.layout
+          }
+
+          return <Route key={index} path={route.path} element={
+            <Layout>
+                <Page />
+            </Layout>} />
+        })}
+
+        {/* <Route path='/overview' exact element={<Overview isLogin={isLogin} handleLogin={handleLogin}/>} />
+        <Route path='/overview/users' exact element={<User/>} /> */}
+      </Routes>
+
     </Router>
   );
 }
