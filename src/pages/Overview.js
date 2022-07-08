@@ -1,12 +1,7 @@
-import { Navigate } from 'react-router-dom'
-
-const Overview = ({isLogin, handleLogin}) => {
+function Overview() {
     return (
         <>
-            {/* {!isLogin &&  <Navigate to='/' />} */}
-            <div className='home'>
-                <h1>Overview</h1>
-                <h1>Overview</h1>
+            <div>
                 <h1>Overview</h1>
             </div>
         </>

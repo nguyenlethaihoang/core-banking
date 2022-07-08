@@ -1,5 +1,4 @@
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
+import Header from "../components/Header";
 
 function HeaderOnly({ children }) {
     return (
@@ -9,7 +8,6 @@ function HeaderOnly({ children }) {
                 <div className="content">
                     {children}
                 </div>
-                <Footer />
             </div>
         </div>
     )
