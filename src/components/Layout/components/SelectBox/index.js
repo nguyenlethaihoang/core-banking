@@ -6,7 +6,6 @@ function SelectBox({props}) {
     let string = props.stringValue
     return (
         <div>
-            {console.log(string)}
             <InputLabel 
                 variant="standard" 
                 htmlFor="uncontrolled-native"
@@ -21,11 +20,12 @@ function SelectBox({props}) {
                 // id: 'uncontrolled-native',
                 // }}
             >
-                {CityData.map((item, index) => {
-                  return (
-                    <option key={index} value={item}>{item}</option>
-                  )
-                })}
+                if (string == "CityData") {
+                    CityData.map((item, index) => {
+                        return (
+                            <option key={index} value={item}>{item}</option>
+                        )
+                })} else  
             </NativeSelect>
         </div>
     )

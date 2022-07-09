@@ -85,12 +85,14 @@ function CustomerManagement() {
         <div
                 style={{ display: "flex", alignItems: "flex-end", margin: "20px 5px" }}
             >
-                <TextField sx={{ width: `40ch`, mr: `20px`}} 
+                {/* <TextField sx={{ width: `40ch`, mr: `20px`}} 
                     required
                     id="txtCityProvince" 
                     label="City/Province"
                     variant="outlined" 
-                />
+                /> */}
+                <SelectBox props="CityData"/>
+                
                 <TextField sx={{ width: `40ch`, mr: `20px`}} 
                     // required
                     id="txtGBCountry" 
@@ -231,7 +233,7 @@ function CustomerManagement() {
             SAVE
         </Button>
 
-        <SelectBox props="CityData"/>
+        
 
         </div>
     )
