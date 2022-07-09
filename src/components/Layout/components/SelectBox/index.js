@@ -1,9 +1,9 @@
 import { InputLabel, NativeSelect } from "@mui/material"
-import { CityData } from "./CityData"
 
-function SelectBox({props}) {
-    const file = JSON.stringify({props})
-    let string = props.stringValue
+ import  CityData  from "./CityData"
+
+function SelectBox() {
+    console.log(CityData)
     return (
         <div>
             <InputLabel 
@@ -20,12 +20,16 @@ function SelectBox({props}) {
                 // id: 'uncontrolled-native',
                 // }}
             >
-                if (string == "CityData") {
-                    CityData.map((item, index) => {
-                        return (
-                            <option key={index} value={item}>{item}</option>
-                        )
-                })} else  
+                
+                {
+                
+                CityData.map((item, index) => {
+                    console.log(item)
+                    return (
+                        <option key={index} value={item}>{item}</option>
+                    )
+                })}
+
             </NativeSelect>
         </div>
     )

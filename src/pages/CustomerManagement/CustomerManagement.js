@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material"
 import SelectBox from "../../components/Layout/components/SelectBox";
+import axios from 'axios'
 // import TextBox from "../../components/Layout/components/TextBox"
 
 function CustomerManagement() {
@@ -91,7 +92,7 @@ function CustomerManagement() {
                     label="City/Province"
                     variant="outlined" 
                 /> */}
-                <SelectBox props="CityData"/>
+                <SelectBox />
                 
                 <TextField sx={{ width: `40ch`, mr: `20px`}} 
                     // required
@@ -227,7 +228,16 @@ function CustomerManagement() {
             size="large"
             // href="https://google.com"
             onClick={() => {
-                alert('Save susscessfully');
+                axios.post('http://localhost:8080/customer/create_individual_customer',{
+                    firstName: document.getElementById('txtFirstName').value,
+                    lastName: document.getElementById('txtLastName').value,
+                    middleName: document.getElementById('txtMiddleName').value,
+                    //middleName: document.getElementById('txtMiddleName').value,
+
+                })
+                .then(res => {
+                    console.log('inserted')
+                })
               }}
         >
             SAVE
