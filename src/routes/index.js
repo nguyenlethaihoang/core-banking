@@ -1,5 +1,6 @@
 // Layouts
 import { HeaderOnly } from "../components/Layout"
+import CustomerManagement from "../pages/CustomerManagement/CustomerManagement"
 
 import Home from "../pages/Home"
 import Login from "../pages/Login/Login"
@@ -17,6 +18,7 @@ const privateRoutes = [
     { path: '/', component: Home},
     { path: '/overview', component: Overview},
     { path: '/overview/users', component: User, layout: HeaderOnly},
+    { path: '/customer_management', component: CustomerManagement},
 ]
 
 export { publicRoutes, privateRoutes }

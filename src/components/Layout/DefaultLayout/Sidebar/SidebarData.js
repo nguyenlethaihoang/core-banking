@@ -6,20 +6,30 @@ import * as RiIcons from "react-icons/ri";
 
 export const SidebarData = [
   {
-    title: "Overview",
-    path: "/overview",
+    title: "Teller Operation",
+    path: "/",
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
-        title: "User",
-        path: "users",
+        title: "Customer Management",
+        path: "/customer_management",
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: "Revenue",
-        path: "overview/revenue",
+        title: "Signature Management",
+        path: "/signature_management",
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: "Account Management",
+        path: "/account_management",
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: "Foreign Exchange",
+        path: "/foreign_exchange",
         icon: <IoIcons.IoIosPaper />
       }
     ]
@@ -28,8 +38,8 @@ export const SidebarData = [
   // Second
 
   {
-    title: "Report",
-    path: "/report",
+    title: "Transfer Operation",
+    path: "/",
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -54,15 +64,15 @@ export const SidebarData = [
 
   // Third
   {
-    title: "Product",
-    path: "/products",
+    title: "Credit Operation",
+    path: "/",
     icon: <FaIcons.FaCartPlus />
   },
 
   // Four
   {
-    title: "Team",
-    path: "/team",
+    title: "Trade Finance Operation",
+    path: "/",
     icon: <IoIcons.IoMdPeople />
   }
 ];
