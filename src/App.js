@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Overview from './pages/Overview';
 import User from "./pages/User";
 import { Fragment, useState } from "react";
-import { privateRoutes } from "./routes";
+import { publicRoutes } from "./routes";
 import { DefaultLayout } from "./components/Layout";
 
 
@@ -19,8 +19,8 @@ function App() {
     <Router>
       {/* <Sidebar /> */}
       <Routes>
-
-        {privateRoutes.map((route, index)=> {
+{/* 
+        {publicRoutes.map((route, index)=> {
           const Page = route.component
 
           let Layout = DefaultLayout
@@ -35,7 +35,17 @@ function App() {
             <Layout>
                 <Page />
             </Layout>} />
-        })}
+        })} */}
+
+
+        {publicRoutes.map((route, index)=> {
+          const Page = route.component
+          return <Route key={index} path={route.path} element={
+           
+                <Page />
+           } />
+        })}   
+
 
         {/* <Route path='/overview' exact element={<Overview isLogin={isLogin} handleLogin={handleLogin}/>} />
         <Route path='/overview/users' exact element={<User/>} /> */}

@@ -4,13 +4,15 @@ import CustomerManagement from "../pages/CustomerManagement/CustomerManagement"
 
 import Home from "../pages/Home"
 import Login from "../pages/Login/Login"
+import Slider from "../pages/Login/Slider"
 import Overview from "../pages/Overview"
 import User from "../pages/User"
 
 
 // Public Routes
 const publicRoutes = [
-    { path: '/login', component: Login}
+    { path: '/login', component: Login},
+    { path: '/slider', component: Slider}
 ]
 
 // Private Routes
