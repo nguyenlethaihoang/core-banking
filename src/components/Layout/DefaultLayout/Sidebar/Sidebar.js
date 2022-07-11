@@ -14,9 +14,9 @@ const SidebarNav = styled.nav`
   justify-content: center;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; 
   transition: 350ms;
-  z-index: 10;
+  // z-index: 10;
   margin-top: 60px;
 `;
 

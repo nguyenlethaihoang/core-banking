@@ -5,7 +5,7 @@ import SelectBox from "../../../components/Layout/components/SelectBox";
 
 function OpenIndividualCustomer() {
     return (
-        <Accordion style={{  paddingLeft: '50px'}}>
+        <Accordion >
                 <AccordionSummary
                 expandIcon  ={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
@@ -14,6 +14,9 @@ function OpenIndividualCustomer() {
                 <Typography variant="h6" align="center" color="#0a3060">1. Open Individual Customer</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
+
+                    
+
                     <div
                         style={{ display: "flex", alignItems: "flex-end", margin: "20px 5px" }}
                     >

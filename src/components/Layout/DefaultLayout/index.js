@@ -9,9 +9,9 @@ const cx = classNames.bind(styles)
 function DefaultLayout({ children }) {
     return (
         <div className={cx('wrapper')}>
-            <Header className={cx('header')} />
+            <Header className={cx('header')}/>
             <div classname={cx('container')}>
-                <Sidebar />
+                <Sidebar className={cx('sidebar')}/>
                 <div className={cx('content')}>
                     {children}
                 </div>

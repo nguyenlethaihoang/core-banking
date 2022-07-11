@@ -2,16 +2,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // padding-right: 150px;
-    padding-top:80px
+    padding-right: 150px;
+    padding-top:180px
+    // flex-flow: row wrap;
 }
-.header {
-}
+
 .container {
     width: var(--default-layout-width);
-    display: flex; 
+    display: flex;
+    // flex-wrap: nowrap;
 }   
 
+.header {
+
+}
+
 .content {
-    flex: 1;
+    flex: 3 0px;
 }

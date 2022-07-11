@@ -1,10 +1,16 @@
 .wrapper {
+
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-top-spacer: 9px;
+    --search-button-width: 52px;
+
     width: 100%;
     height: var(--default-layout-header-height, 60px);
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: fixed; 
     top: 0;
     left: 0;
     background-color: #ffff;
@@ -19,11 +25,93 @@
 }
 
 .logo {
-    position: relative;
+    // position: relative;
     // left: -530px;
 }
 
 .university_logo {
-    position: relative;
+    // position: relative;
     // left: -400px;
 }
+
+.search {
+    position: relative;
+    width: 361px;
+    height: 46px;
+    padding-left: 16px;
+    display: flex;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-radius);
+    border: 1.5px solid transparent; 
+    
+
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--black);
+        font-size: 1rem;
+        caret-color: var(--primary);
+        // padding: 12px;
+        background-color: transparent;
+        outline: none;
+    border: none;
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75)
+    }
+
+    &::after {
+        content: ' ';
+        position: absolute;
+        top: var(--search-top-spacer);
+        right: var(--search-button-width);
+        width: 1px;
+        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.clear {
+    position: absolute;
+    right: calc(var(--search-button-width)  + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+    border: none;
+    outline: none;
+}
+.loading {
+    position: absolute;
+    right: calc(var(--search-button-width)  + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+    
+}
+
+
+.search-btn {
+    width: var(--search-button-width);
+    height: 100%;
+    outline: none;
+    border: none;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.3rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35,0.03);
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+
