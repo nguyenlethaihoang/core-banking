@@ -11,12 +11,19 @@ function OpenIndividualCustomer() {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 >
-                <Typography variant="h6" align="center" color="#0a3060">1. Open Individual Customer</Typography>
+                <Typography 
+                    variant="h6" 
+                    align="center" 
+                    color="#0a3060"
+                    fontWeight= "700"
+                    sx={{
+                        padding: "10px"
+                    }}
+                >
+                    1. Open Individual Customer
+                </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-
-                    
-
                     <div
                         style={{ display: "flex", alignItems: "flex-end", margin: "20px 5px" }}
                     >
@@ -228,8 +235,20 @@ function OpenIndividualCustomer() {
                         />
                 </div>
 
-                <Button 
-                    sx={{ width: `40ch`, mr: `400px`, padding: ``}} 
+                <Button  
+                    sx={{ 
+                        width: `30ch`,  
+                        paddingLeft: ``,
+                        textAlign: `center`, 
+                        backgroundColor: '#6ab04c',
+                        color: '#fff',
+                        fontStyle: 'bold',
+                        '&:hover': {
+                            backgroundColor: '#6ab04c',
+                            borderColor: '#0062cc',
+                            boxShadow: 'none',
+                        },
+                    }} 
                     variant="contained"
                     // color="success"
                     size="large"
@@ -237,6 +256,7 @@ function OpenIndividualCustomer() {
                     onClick={() => {
                         alert('Save susscessfully');
                     }}
+                    
                 >
                     SAVE
                 </Button>

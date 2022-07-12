@@ -18,6 +18,7 @@ const SidebarNav = styled.nav`
   transition: 350ms;
   // z-index: 10;
   margin-top: 60px;
+  border-radius: 0px 10px 0px 0px;
 `;
 
 const SidebarWrap = styled.div`

@@ -1,9 +1,19 @@
+import { Typography } from "@mui/material"
 
 function Home() {
     return (
         <div>
             <div>
-                <h2>Home</h2>
+            <Typography
+                fontWeight= "700" 
+                variant="h4"
+                color="#e74c3c"
+                sx={{
+                    padding: "50px"
+                  }}
+            >
+                Welcome to VIET VICTORY
+            </Typography>
             </div>
         </div>
     )
