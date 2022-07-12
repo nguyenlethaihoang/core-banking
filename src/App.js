@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Overview from './pages/Overview';
 import User from "./pages/User";
 import { Fragment, useState } from "react";
-import { publicRoutes } from "./routes";
+import { privateRoutes } from "./routes";
 import { DefaultLayout } from "./components/Layout";
+import Login from "./pages/Login/Login";
 
 
 function App() {
@@ -17,38 +18,36 @@ function App() {
 
   return (
     <Router>
-      {/* <Sidebar /> */}
       <Routes>
-{/* 
-        {publicRoutes.map((route, index)=> {
-          const Page = route.component
 
-          let Layout = DefaultLayout
+        if (isLogin === false) {
+          <Route path='/login' exact element={<Login />} />
+        } 
+        else {
+          privateRoutes.map((route, index)=> {
+            const Page = route.component
+  
+            let Layout = DefaultLayout
+            
+            if (route.layout) {
+              Layout = route.layout
+            } else if (route.layout === null) {
+              Layout = route.layout
+            }
+  
+            return <Route key={index} path={route.path} element={
+              <Layout>
+                  <Page />
+              </Layout>} />
+          })}
+  
           
-          if (route.layout) {
-            Layout = route.layout
-          } else if (route.layout === null) {
-            Layout = route.layout
-          }
 
-          return <Route key={index} path={route.path} element={
-            <Layout>
-                <Page />
-            </Layout>} />
-        })} */}
-
-
-        {publicRoutes.map((route, index)=> {
-          const Page = route.component
-          return <Route key={index} path={route.path} element={
-           
-                <Page />
-           } />
-        })}   
-
-
-        {/* <Route path='/overview' exact element={<Overview isLogin={isLogin} handleLogin={handleLogin}/>} />
-        <Route path='/overview/users' exact element={<User/>} /> */}
+  
+  
+          <Route path='/overview' exact element={<Overview isLogin={isLogin} handleLogin={handleLogin}/>} />
+          <Route path='/overview/users' exact element={<User/>} />
+        
       </Routes>
 
     </Router>

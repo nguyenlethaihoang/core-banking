@@ -21,6 +21,7 @@ const privateRoutes = [
     { path: '/overview', component: Overview},
     { path: '/overview/users', component: User, layout: HeaderOnly},
     { path: '/customer_management', component: CustomerManagement},
+
 ]
 
 export { publicRoutes, privateRoutes }

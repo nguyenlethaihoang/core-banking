@@ -47,15 +47,15 @@ function Header() {
                 <Tippy 
                         interactive
                         visible={searchResult.length > 0}
-                        render={attrs => (
-                            <PopperWrapper>
-                                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        // render={attrs => (
+                        //     <PopperWrapper>
+                        //         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
 
-                                    Ket qua
+                        //             Ket qua
 
-                                </div>
-                            </PopperWrapper>
-                        )}
+                        //         </div>
+                        //     </PopperWrapper>
+                        // )}
                 >
                     <div className={cx('search')}>
                         <input placeholder='Search features' spellCheck={false}/>
