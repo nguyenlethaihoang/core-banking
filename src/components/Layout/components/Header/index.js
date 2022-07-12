@@ -9,6 +9,9 @@ import styles from './Header.module.scss'
 import { useEffect, useState } from 'react';
 import { Popper } from '@mui/material';
 
+import EmailIcon from "@mui/icons-material/Email";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import Box from "@mui/material/Box";
 
 const cx = classNames.bind(styles)
 
@@ -72,9 +75,22 @@ function Header() {
                         
                     </div>
                 </Tippy>
+                
 
                 <div className={cx('actions')}>
-                    
+                    <Box>
+                        <EmailIcon 
+                            sx={{ 
+                                display: "flex",
+                                marginRight: '5px'
+                            }} 
+                        />
+                    </Box>
+                    <Box>
+                        <NotificationsIcon
+                        sx={{ display: { xs: "flex" }}}
+                        />
+                    </Box>
                 </div>
             </div>
         </header>

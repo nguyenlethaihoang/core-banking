@@ -6,7 +6,7 @@ import './LoginForm.css'
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 function LoginForm() {
     return (
-        <div className="main">
+        <form className="main" action="/" >
             <Typography
                 fontWeight= "700" 
                 variant="h4"
@@ -43,7 +43,6 @@ function LoginForm() {
                     id="txtUsername" 
                     label="Username" 
                     variant="filled"
-                    
                     sx={{ 
                         input: { color: 'black' }, 
                         bgcolor: 'white',
@@ -63,7 +62,6 @@ function LoginForm() {
                     label="Password"
                     type="password" 
                     variant="filled"
-                    
                     sx={{ 
                         input: { color: 'black' }, 
                         bgcolor: 'white',
@@ -109,13 +107,13 @@ function LoginForm() {
                         boxShadow: 'none',
                       },
                 }}
-                
+                type={"submit"}
             >
                 Log in
             </Button>
 
 
-        </div>
+        </form>
     )
 }
 

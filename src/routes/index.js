@@ -12,7 +12,6 @@ import User from "../pages/User"
 // Public Routes
 const publicRoutes = [
     { path: '/login', component: Login},
-    { path: '/slider', component: Slider}
 ]
 
 // Private Routes
