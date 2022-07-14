@@ -9,12 +9,13 @@
     height: var(--default-layout-header-height, 60px);
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     position: fixed; 
     top: 0;
     left: 0;
     // background-color: #ffff;
     background-color: #ecf0f1;
+    // margin-left: 50px;
 }
 
 .inner {
@@ -23,16 +24,42 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // padding: 500px;
+    // margin-right: 500px;
+
+}
+
+.actions {
+    display: flex;
+    // margin-right: 50px;
+    // padding-right: 50px;
+    // padding: '0px 0px 10px 10px';
 }
 
 .logo {
     // position: relative;
     // left: -530px;
+    padding-left: 50px;
+    padding-right: 100px;
 }
 
 .university_logo {
     // position: relative;
+    padding-left: 50px;
+    padding-right: 100px;
     // left: -400px;
+}
+
+.email_logo {
+    padding-left: 320px;
+}
+
+.bell_logo {
+    padding-left: 30px;
+}
+
+.avt_logo {
+    padding-left: 30px;
 }
 
 .search {
@@ -44,7 +71,7 @@
     background-color: rgba(22, 24, 35, 0.06);
     border-radius: var(--search-border-radius);
     border: 1.5px solid transparent; 
-    
+
 
     input {
         flex: 1;
@@ -97,6 +124,7 @@
 
 
 .search-btn {
+    
     width: var(--search-button-width);
     height: 100%;
     outline: none;

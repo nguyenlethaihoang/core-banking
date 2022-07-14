@@ -38,7 +38,9 @@ function LoginForm() {
             >Please login to continue</Typography>
 
             <Box sx={{ display: 'flex', alignItems: 'flex-end', paddingBottom: '20px' }}>
-                <AccountCircle sx={{ color: 'white', mr: 1, my: 0.5 }} />
+                <AccountCircle 
+                    sx={{ color: 'white', mr: 1, my: 0.5 }} 
+                />
                 <TextField 
                     id="txtUsername" 
                     label="Username" 
